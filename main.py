@@ -4,6 +4,11 @@ import views.category
 import views.product
 
 
+@app.route('/')
+def home():
+    return "<h1>My API</h1>"
+
+
 @app.route('/products/<int:product_id>/', methods=["PUT"])
 def put_product(product_id):
     return views.product.put_product(product_id)
