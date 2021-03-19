@@ -22,12 +22,12 @@ python main.py
 
 ## Running the tests
 1. Open a new terminal (server has to be working)
-2. Navigate to <b>adcash-backend/tests</b>
+2. Navigate to <b>adcash-backend</b>
 2. Run the following commands 
 
 ```console
-python -m pytest test_product.py
-python -m pytest test_category.py
+python -m pytest tests/test_product.py
+python -m pytest tests/test_category.py
 ```
 
 ## Endpoints

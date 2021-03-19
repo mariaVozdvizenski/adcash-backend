@@ -3,7 +3,7 @@ from general import db
 
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    price = db.Column(db.DECIMAL(10, 2), nullable=False)
+    price = db.Column(db.Integer, nullable=False)
     name = db.Column(db.String(255), nullable=False)
     category_id = db.Column(db.Integer,
                             db.ForeignKey('category.id'),

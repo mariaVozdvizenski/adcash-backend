@@ -9,7 +9,7 @@ class ProductSchemaPost(ma.SQLAlchemySchema):
         model = Product
 
     name = fields.Str(required=True, validate=Length(min=1, max=255))
-    price = ma.auto_field()
+    price = fields.Float(required=True)
     category_id = ma.auto_field()
 
     @post_load
@@ -23,7 +23,7 @@ class ProductSchema(ma.SQLAlchemySchema):
 
     id = ma.auto_field()
     name = fields.Str(required=True, validate=Length(min=1, max=255))
-    price = ma.auto_field()
+    price = fields.Float()
     category_id = ma.auto_field()
 
     @post_load
@@ -37,7 +37,7 @@ class ProductSchemaPut(ma.SQLAlchemySchema):
 
     id = ma.auto_field()
     name = fields.Str(validate=Length(min=1, max=255))
-    price = fields.Decimal()
+    price = fields.Float()
     category_id = fields.Integer()
 
     @post_load
