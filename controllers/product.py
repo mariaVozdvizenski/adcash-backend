@@ -12,7 +12,6 @@ products_schema = ProductSchema(many=True)
 
 def get_products():
     products = Product.query.all()
-
     return jsonify(products_schema.dump(products))
 
 
@@ -45,7 +44,6 @@ def put_product(product_id):
         return not_found, 404
 
     data = request.get_json()
-    print(data)
     errors = products_schema_put.validate(data)
 
     if errors:
